@@ -11,9 +11,7 @@ RUN apt-get update \
     
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 
-RUN useradd -u 1000 -s /bin/bash devpod
-
-RUN chown -R devpod:devpod /home/devpod
+RUN useradd -u 1000 -s /bin/bash -m devpod
 
 RUN mkdir -p /home/devpod/.ssh
 
