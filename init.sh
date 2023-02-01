@@ -8,3 +8,5 @@ if [[ -n "$PUBLIC_KEY" ]]; then
 fi
 
 service ssh start
+
+tail -f /dev/null
