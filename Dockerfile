@@ -11,6 +11,8 @@ RUN apt-get update \
 
 COPY init.sh /root
 
+RUN chmod +x /root/init.sh
+
 EXPOSE 2222
 
 VOLUME /config
