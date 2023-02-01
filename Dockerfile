@@ -8,13 +8,16 @@ RUN apt-get update \
     sudo \
     openssh-client \
     openssh-server
+    
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+
+RUN useradd -u 1000 devpod
+
+RUN mkdir -p /home/devpod/.ssh
 
 COPY init.sh /root
-
 RUN chmod +x /root/init.sh
 
-EXPOSE 2222
-
-VOLUME /config
+EXPOSE 22
 
 ENTRYPOINT ["/root/init.sh"]
