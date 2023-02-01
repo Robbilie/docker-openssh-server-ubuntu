@@ -13,6 +13,8 @@ RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/
 
 RUN useradd -u 1000 devpod
 
+RUN chown -R devpod:devpod /home/devpod
+
 RUN mkdir -p /home/devpod/.ssh
 
 COPY init.sh /root
