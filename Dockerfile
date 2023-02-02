@@ -6,6 +6,7 @@ RUN apt-get update \
     nano \
     unzip \
     sudo \
+    git \
     openssh-client \
     openssh-server
     
