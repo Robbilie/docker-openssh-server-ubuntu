@@ -16,6 +16,9 @@ RUN useradd -u 1000 -s /bin/bash -m devpod
 
 RUN mkdir -p /home/devpod/.ssh
 
+RUN touch /home/devpod/.ssh/known_hosts
+RUN chown devpod:devpod /home/devpod/.ssh/known_hosts
+
 COPY init.sh /root
 RUN chmod +x /root/init.sh
 
